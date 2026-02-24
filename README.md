@@ -1,80 +1,21 @@
 # CampusPe Python Basics Assignment
 
-Welcome to my Python Basics Assignment repository! This project contains 20 foundational Python programming challenges. I wrote these scripts with a focus on clean, readable code and graceful error handling—because nobody likes a program that crashes when you accidentally divide by zero!
+This assignment was all about getting the basics of Python down, you know, like loops and strings and stuff. I ended up building these 20 little scripts, and honestly, it felt good to see them actually run without too many bugs. I tried to keep the code pretty straightforward, nothing fancy, because I am not some pro coder yet. The whole thing is in this repo, just a bunch of .py files that I threw together over a couple weeks.
 
-## The Projects
+Starting with the personal bio card thing.  I used f strings to format it, and padded things with spaces so the borders did not mess up if the name was long. It seems simple, but it took a few tries to get the alignment right. Then there is the calculator, super basic, just adds, subtracts, multiplies, divides two numbers you type in. I added checks for dividing by zero, because that would crash everything otherwise, and I hate error messages popping up out of nowhere.
 
-Here is a breakdown of what I built and the approach I took for each challenge:
+The string manipulator was fun, I guess. You input a sentence, and it spits out versions like all uppercase or reversed or title case. I leaned on those built in methods a lot, like split and slice with negative steps, instead of writing my own loops, which probably would have been a mess. Age calculator came next, that one pulls in the datetime module to figure out exact age down to minutes, handling leap years and all. I think it works okay, but dates can be tricky if you input something weird.
 
-1. **Personal Bio Card** *What it does:* Generates a nicely formatted, ASCII-style ID card for a student.  
-   *The approach:* I used Python's f-strings and text alignment methods (like `<20`) to ensure the box borders stay perfectly rigid regardless of the input length.
+Bill splitter feels practical, like for when you go out with friends. It adds tax and tip to the total, then divides by how many people. I used floats and rounded to two decimals for money stuff, which made sense. Grade calculator averages five subject scores and gives a letter, but I also checked if any single one failed, because passing all matters more than just the average sometimes. That if elif chain was straightforward, though.
 
-2. **Simple Calculator** *What it does:* Takes two numbers and runs them through basic arithmetic operations.  
-   *The approach:* Kept it simple but robust. I added inline conditional checks to catch division and modulo by zero so the program fails gracefully.
+Temperature converter has this menu that loops until you quit, switching between C, F, K with some math formulas. I kept the while loop going with user input, nothing too complicated. Leap year checker explains the rules, like divisible by four but not a hundred unless four hundred, all in one if statement with ands and ors. It seems accurate, I tested a few years like 2000 and 1900.
 
-3. **String Manipulator** *What it does:* Slices and dices a user's sentence into various formats (uppercase, title case, reversed, etc.).  
-   *The approach:* Heavily utilized Python's built-in string methods (`.split()`, `.replace()`, slicing `[::-1]`) to avoid writing overly complex manual loops.
+Movie tickets base price on age, then discounts for weekends, two steps basically. ATM simulator is more involved, infinite loop for menu, tracks balance, stops you from overdrawing. I added a minimum balance check, which felt like a real ATM thing. Number patterns print pyramids and grids with nested fors, concatenating strings for the mirrors, that part got a bit fiddly.
 
-4. **Age Calculator** *What it does:* Calculates a person's exact age in years, months, days, hours, and minutes.  
-   *The approach:* Imported the `datetime` module to handle the heavy lifting of calendar math, accounting for leap years and exact date differences.
+Multiplication tables, simple loops for one number, then list comps for the full ten by ten, padded to line up. Sum and average takes as many numbers as you want, lists them up and uses sum and len built ins, easy. Factorial shows steps backward in a loop, building the product as it goes, with a string for the equation.
 
-5. **Bill Splitter** *What it does:* Calculates the total cost of a restaurant bill, including tax and tip, and splits it evenly.  
-   *The approach:* Modeled a real-world checkout process using standard float variables and formatted the final output to exactly two decimal places for currency accuracy.
+Prime numbers, I check up to square root to speed it up, and find all in a range too. Guessing game uses random, gives hints if close, limits attempts to seven. Palindrome cleans input to lower no spaces, then compares to reverse slice.
 
-6. **Grade Calculator** *What it does:* Averages scores from 5 subjects and assigns a letter grade.  
-   *The approach:* Used a list to collect the marks dynamically, then applied an `if/elif` ladder to filter the percentage into the correct grade bracket. Added a quick check to ensure the student passed *all* individual subjects.
+Modular calculator breaks operations into functions, dictionary maps choices to them, cleaner that way. Text analysis counts vowels, longest word, word frequencies with dicts and comprehensions. Number systems toolkit has a menu for fib, gcd from math module, armstrong checks, perfect numbers, all modular.
 
-7. **Temperature Converter Menu** *What it does:* Converts temperatures between Celsius, Fahrenheit, and Kelvin.  
-   *The approach:* Built an interactive, repeating `while` loop menu. The logic relies on straightforward mathematical formulas mapped to the user's menu choice.
-
-8. **Leap Year Checker** *What it does:* Determines if a given year is a leap year and explains why.  
-   *The approach:* Used logical operators (`and`, `or`) to perfectly translate the real-world rules of leap years (divisible by 4, but not 100, unless divisible by 400) into a single, clean `if` statement.
-
-9. **Movie Ticket Pricing** *What it does:* Calculates ticket costs based on the customer's age and the day of the week.  
-   *The approach:* Separated the logic into two steps: first establishing the base price using age brackets, then applying a boolean check to see if a weekend discount applies.
-
-10. **ATM Simulator** *What it does:* A stateful banking menu allowing deposits, withdrawals, and balance checks.  
-    *The approach:* Used an infinite `while True` loop to keep the ATM "open" until the user explicitly exits. Added safety checks to prevent overdrawing and to maintain a minimum required balance.
-
-11. **Number Patterns** *What it does:* Prints various visually satisfying pyramids and grids of numbers.  
-    *The approach:* Used nested `for` loops and the `range()` function. For the more complex mirroring patterns, I concatenated ascending and descending string sequences.
-
-12. **Multiplication Tables** *What it does:* Generates custom math tables and a full 10x10 grid.  
-    *The approach:* Used simple loops for the basic table, and list comprehensions with string padding (`:4`) to ensure the 10x10 grid aligns perfectly into columns.
-
-13. **Sum & Average Math** *What it does:* Takes an arbitrary amount of numbers and calculates key statistics.  
-    *The approach:* Instead of manual tracking, I appended all inputs to a list and let Python's powerful built-in functions (`sum()`, `max()`, `min()`) do the work.
-
-14. **Factorial Loop** *What it does:* Calculates the factorial of a number and shows the math step-by-step.  
-    *The approach:* Implemented a reverse `for` loop to step backward from the target number down to 1, building a visual string of the equation alongside the actual math.
-
-15. **Prime Number Logic** *What it does:* Checks if a number is prime and finds all primes within a specific range.  
-    *The approach:* Optimized the prime-checking algorithm by only looping up to the square root of the number (`int(num**0.5) + 1`), which makes it significantly faster for large inputs.
-
-16. **Number Guessing Game** *What it does:* An interactive game where the user tries to guess a randomly generated number within 7 attempts.  
-    *The approach:* Imported the `random` module. Added "Too high" and "Too low" feedback logic, and included a hint feature that triggers if the guess is within 5 digits of the answer.
-
-17. **Palindrome Checker** *What it does:* Checks if a word or number reads the same forwards and backwards.  
-    *The approach:* Sanitized the input first by removing spaces and forcing lowercase, then compared it directly against its sliced reverse (`[::-1]`).
-
-18. **Modular Calculator** *What it does:* A menu-driven calculator, completely reorganized using functions.  
-    *The approach:* Abstracted each math operation into its own dedicated function. Used a dictionary to map the user's menu choice directly to the corresponding function for cleaner code.
-
-19. **Text Analysis Engine** *What it does:* A comprehensive tool that counts vowels, finds the longest word, and builds frequency maps of text.  
-    *The approach:* Built a suite of specialized, single-purpose functions. Used dictionary `get()` methods for efficient word frequency counting and list comprehensions for quick vowel filtering.
-
-20. **Number Systems Toolkit** *What it does:* A massive toolkit of mathematical functions (Fibonacci, GCD, Armstrong numbers) wrapped in a user menu.  
-    *The approach:* Mixed Python's built-in `math` library (for GCD and factorials) with custom algorithmic logic (for Armstrong and perfect numbers) to create a highly modular and testable script.
-
-## 🛠️ How to Run
-
-You don't need any special libraries outside of standard Python! 
-
-1. Ensure you have Python installed (`python --version`).
-2. Clone this repository or download the files.
-3. Open your terminal/command prompt.
-4. Run any file using the `python` command. 
-
-For example:
-```bash
-python <filename>.py
+To run any of this, just need Python, no extras. Type python filename.py in terminal, that is it.
